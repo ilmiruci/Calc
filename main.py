@@ -5,9 +5,10 @@ def calc():
         print("Это программа калькулятор\n"
               "Введите два числа, операцию и получите результат")
 
+        operator = operations.get_operator()  # Получаем оператор и проверяем его, если не прошел проверку то False
         user_num1 = int(input("Введите первое число: "))
         user_num2 = int(input("Введите второе число: "))
-        operator = operations.get_operator() # Получаем оператор и проверяем его, если не прошел проверку то False
+
 
         if operator: # Если значение True, то выполняем код
             result = operations.calc(user_num1, user_num2, operator)

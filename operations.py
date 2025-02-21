@@ -1,13 +1,14 @@
+
 def get_operator() -> bool or str:
     """
     Запрашивает у пользователя значение,
-    проверяет и возвращает корректное значение либо False
+    проверяет и возвращает корректное значение-оператор либо False
     :return: "+", "-", "*", "/" or False
     """
-    operator = input("Введите оператор +, -, *, /: ")
+    operator = input("Введите оператор +, -, *, /, %, ^: ")
 
     match operator:
-        case "+" | "-" | "*" | "/":
+        case "+" | "-" | "*" | "/" | "%" | "^":
             return operator
         case _:
             return False
@@ -30,4 +31,8 @@ def calc(num1, num2, operator) -> int or float:
             return num1 * num2
         case "/":
             return num1 / num2
+        case "%":
+            return num1 % num2
+        case "^":
+            return num1 ** num2
 
