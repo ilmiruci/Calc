@@ -1,5 +1,4 @@
-
-def get_operator() -> bool or str:
+def get_operator() -> bool | str:
     """
     Запрашивает у пользователя значение,
     проверяет и возвращает корректное значение-оператор либо False
@@ -14,13 +13,14 @@ def get_operator() -> bool or str:
             return False
 
 
-def calc(num1, num2, operator) -> int or float:
+def calc(num1, num2, operator) -> int | float:
     """
-    Производит расчет и возвращает результат
+    Производит расчет и возвращает результат.
+
     :param num1: число 1
     :param num2: число 2
-    :param calc_operator: оператор
-    :return: результат вычисления
+    :param operator: Оператор.
+    :return: Результат вычисления.
     """
     match operator:
         case "+":
