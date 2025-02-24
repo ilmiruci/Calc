@@ -1,38 +1,24 @@
-def get_operator() -> bool | str:
-    """
-    Запрашивает у пользователя значение,
-    проверяет и возвращает корректное значение-оператор либо False
-    :return: "+", "-", "*", "/" or False
-    """
-    operator = input("Введите оператор +, -, *, /, %, ^: ")
+def addition(num1: int | float, num2: int | float) -> int | float:
+    return num1 + num2
 
-    match operator:
-        case "+" | "-" | "*" | "/" | "%" | "^":
-            return operator
-        case _:
-            return False
+def sub(num1: int | float, num2: int | float) -> int | float:
+    return num1 - num2
 
+def multi(num1: int | float, num2: int | float) -> int | float:
+    return num1 * num2
 
-def calc(num1, num2, operator) -> int | float:
-    """
-    Производит расчет и возвращает результат.
+def div(num1: int | float, num2: int | float) -> int | float:
+    if num2 == 0:
+        raise ZeroDivisionError("[Ошибка] Деление на ноль!")
 
-    :param num1: число 1
-    :param num2: число 2
-    :param operator: Оператор.
-    :return: Результат вычисления.
-    """
-    match operator:
-        case "+":
-            return num1 + num2
-        case "-":
-            return num1 - num2
-        case "*":
-            return num1 * num2
-        case "/":
-            return num1 / num2
-        case "%":
-            return num1 % num2
-        case "^":
-            return num1 ** num2
+    return num1 / num2
+
+def remainder(num1: int | float, num2: int | float) -> int | float:
+    if num2 == 0:
+        raise ZeroDivisionError("[Ошибка] Деление на ноль!")
+
+    return num1 % num2
+
+def power(base: int | float, exp: int | float) -> int | float:
+    return base ** exp
 
